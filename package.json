@@ -1,6 +1,6 @@
 {
   "name": "korra",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An opinionated linter.",
   "author": "Jorge Gonzalez",
   "license": "MIT",
@@ -11,7 +11,7 @@
     "src",
     "LICENSE"
   ],
-  "bin": "index.js",
+  "bin": "src/index.js",
   "dependencies": {
     "babel-eslint": "^8.2.5",
     "chalk": "^2.4.1",
