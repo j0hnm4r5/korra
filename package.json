@@ -1,0 +1,44 @@
+{
+  "name": "korra",
+  "version": "0.0.1",
+  "description": "An opinionated linter.",
+  "author": "Jorge Gonzalez",
+  "license": "MIT",
+  "files": [
+    "src",
+    "LICENSE"
+  ],
+  "main": "index.js",
+  "bin": {
+    "korra": "cli.js"
+  },
+  "dependencies": {
+    "babel-eslint": "^8.2.5",
+    "chalk": "^2.4.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-no-use-extend-native": "^0.3.12",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "eslint-plugin-typescript": "^0.12.0",
+    "eslint-plugin-unicorn": "^4.0.3",
+    "esm": "^3.0.62",
+    "meow": "^5.0.0",
+    "prettier": "^1.13.7",
+    "standard": "^11.0.1",
+    "standard-engine": "^9.0.0",
+    "typescript": "^2.9.2",
+    "typescript-eslint-parser": "^16.0.1"
+  },
+  "scripts": {
+    "test": ""
+  }
+}
