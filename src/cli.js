@@ -1,7 +1,9 @@
 import meow from 'meow';
 import chalk from 'chalk';
+import { linter as Linter } from 'standard-engine';
 
-import { log, Commands, Aliases } from './utils';
+import options from './options';
+import { k } from './utils';
 
 const { input, help } = meow(
   chalk`
@@ -21,21 +23,33 @@ Usage:
 );
 
 export default () => {
-  let [command, ...args] = input;
-  console.log(args, help);
-  log(`Korra ${command}`);
+  console.log(k);
+  let linter = new Linter(options);
+  let formatter = linter.eslint.CLIEngine.getFormatter('pretty');
+  let lintOptions = {};
 
-  switch (command) {
-    case Commands.format:
-    case Aliases.f:
-      break;
+  linter.lintFiles(input, lintOptions, (error, { results }) => {
+    if (error) {
+      throw error;
+    }
+    console.log(formatter(results));
+  });
 
-    case Commands.lint:
-    case Aliases.l:
-      break;
+  // let [command, ...args] = input;
+  // console.log(args, help);
+  // log(`Korra ${command}`);
 
-    default:
-      log(`Error Something weird happened => '${input.join(' ')}'.`);
-      break;
-  }
+  // switch (command) {
+  //   case Commands.format:
+  //   case Aliases.f:
+  //     break;
+
+  //   case Commands.lint:
+  //   case Aliases.l:
+  //     break;
+
+  //   default:
+  //     log(`Error Something weird happened => '${input.join(' ')}'.`);
+  //     break;
+  // }
 };

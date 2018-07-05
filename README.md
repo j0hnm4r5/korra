@@ -1,6 +1,12 @@
-# Ko
+# Korra
+
+
 
 ## Installation
+
+```sh
+yarn global add korra
+```
 
 ## Usage
 

@@ -1,8 +1,8 @@
-var eslint = require('eslint');
-var path = require('path');
-var pkg = require('../../package.json');
+import path from 'path';
+import eslint from 'eslint';
+import pkg from '../package';
 
-module.exports = {
+export default {
   // homepage, version and bugs pulled from package.json
   version: pkg.version || '',
   homepage: pkg.homepage || '',
