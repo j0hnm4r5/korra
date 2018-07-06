@@ -3,15 +3,13 @@ import eslint from 'eslint';
 import pkg from '../package';
 
 export default {
-  // homepage, version and bugs pulled from package.json
-  version: pkg.version || '',
-  homepage: pkg.homepage || '',
-  bugs: pkg.bugs || '',
-  eslint: eslint, // pass any version of eslint >= 1.0.0
-  cmd: 'korra', // should match the "bin" key in your package.json
-  tagline: 'Live by your own standards!', // displayed in output --help
+  version: pkg.version,
+  homepage: pkg.homepage,
+  bugs: pkg.bugs,
+  eslint,
+  cmd: 'korra',
   eslintConfig: {
     configFile: path.join(__dirname, 'eslintrc.json')
   },
-  cwd: '' // current working directory, passed to eslint
+  cwd: ''
 };
