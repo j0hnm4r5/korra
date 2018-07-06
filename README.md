@@ -1,6 +1,6 @@
 # Korra
 
-
+> ✨ JavaScript linter and formatter.
 
 ## Installation
 
