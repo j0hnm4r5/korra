@@ -7,6 +7,32 @@
   "homepage": "https://github.com/jorgegonzalez/korra",
   "repository": "https://github.com/jorgegonzalez/korra",
   "bugs": "https://github.com/jorgegonzalez/korra/issues",
+  "keywords": [
+    "Korra",
+    "airbnb",
+    "check",
+    "checker",
+    "code",
+    "code checker",
+    "code linter",
+    "code standards",
+    "code style",
+    "enforce",
+    "eslint",
+    "formatter",
+    "hint",
+    "jscs",
+    "jshint",
+    "lint",
+    "linter",
+    "prettier",
+    "quality",
+    "simple",
+    "style",
+    "style checker",
+    "style linter",
+    "verify"
+  ],
   "engines": {
     "node": ">=8.0.0"
   },
@@ -30,18 +56,17 @@
     "eslint-plugin-react": "^7.9.1",
     "eslint-plugin-unicorn": "^4.0.3",
     "esm": "^3.0.62",
+    "globby": "^8.0.1",
     "meow": "^5.0.0",
+    "pkg-conf": "^2.1.0",
     "prettier": "^1.13.7",
-    "standard-engine": "^9.0.0",
     "update-notifier": "^2.5.0"
   },
   "devDependencies": {
     "korra": "^0.0.7"
   },
-  "scripts": {
-    "test": "korra"
-  },
+  "scripts": {},
   "korra": {
-    "singleQuote": true
+    "rules": {}
   }
 }

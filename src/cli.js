@@ -1,42 +1,58 @@
+import path from 'path';
 import updateNotifier from 'update-notifier';
 import meow from 'meow';
 import chalk from 'chalk';
-import { linter as Linter } from 'standard-engine';
+import eslint from 'eslint';
 
 import pkg from '../package';
-import options from './options';
 import { korra } from './utils';
+import Engine from './engine';
 
 updateNotifier({ pkg }).notify();
 
-export default () => {
-  console.log(korra, version);
+const defaultOptions = {
+  version: pkg.version,
+  homepage: pkg.homepage,
+  bugs: pkg.bugs,
+  cmd: 'korra',
+  eslintConfig: {
+    configFile: path.join(__dirname, 'eslintrc.json')
+  }
+};
 
-  const { input } = meow(
-    chalk`
+let { input, flags } = meow(
+  chalk`
 Usage:
   $ korra <option> [args]
 `,
-    {
-      flags: {
-        help: {
-          alias: 'h'
-        },
-        version: {
-          alias: 'v'
-        }
+  {
+    flags: {
+      help: {
+        alias: 'h'
+      },
+      version: {
+        alias: 'v'
       }
     }
-  );
+  }
+);
 
-  let linter = new Linter(options);
-  let formatter = linter.eslint.CLIEngine.getFormatter('pretty');
-  let lintOptions = {};
+export default () => {
+  console.log(korra, pkg.version);
 
-  linter.lintFiles(input, lintOptions, (error, { results }) => {
-    if (error) {
-      console.error(error);
-    }
-    console.log(formatter(results));
-  });
+  let linter = new Engine(defaultOptions);
+  let formatter = linter.CLIEngine.getFormatter('pretty');
+
+  if (input === undefined || input.length === 0) {
+    input = ['**/*.js', '**/*.jsx'];
+  }
+
+  let report = linter.lint(input, flags.fix);
+  // console.log(report)
+
+  if (flags.fix) {
+    linter.outputFixes(report);
+  }
+
+  console.log(formatter(report.results));
 };
