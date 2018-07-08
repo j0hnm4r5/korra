@@ -1,6 +1,6 @@
 {
   "name": "korra",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "✨ JavaScript linter and formatter.",
   "author": "Jorge Gonzalez",
   "license": "MIT",
@@ -63,7 +63,7 @@
     "update-notifier": "^2.5.0"
   },
   "devDependencies": {
-    "korra": "^0.0.7"
+    "korra": "^0.0.8"
   },
   "scripts": {},
   "korra": {
