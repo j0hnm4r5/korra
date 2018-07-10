@@ -120,7 +120,7 @@ Then, add the following to your `package.json`:
 {
   "korra": {
     "parser": "typescript-eslint-parser",
-    "plugins": [ "typescript" ]
+    "plugins": ["typescript"]
   }
 }
 ```
