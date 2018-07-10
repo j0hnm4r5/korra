@@ -1,6 +1,6 @@
 {
   "name": "korra",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "✨ JavaScript linter and formatter.",
   "author": "Jorge Gonzalez",
   "license": "MIT",
@@ -68,7 +68,6 @@
   },
   "scripts": {},
   "korra": {
-    "rules": {
-    }
+    "rules": {}
   }
 }
