@@ -48,6 +48,7 @@
     "eslint-config-airbnb": "17.0.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-formatter-pretty": "^1.3.0",
+    "eslint-plugin-flowtype": "^2.50.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-no-use-extend-native": "^0.3.12",
@@ -63,10 +64,11 @@
     "update-notifier": "^2.5.0"
   },
   "devDependencies": {
-    "korra": "^0.0.8"
+    "korra": "*"
   },
   "scripts": {},
   "korra": {
-    "rules": {}
+    "rules": {
+    }
   }
 }
