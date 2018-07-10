@@ -45,13 +45,13 @@ Korra reads options set in your `package.json`:
 
 You can set any of the following options:
 
-### `rules`
+#### `rules`
 
 Type: `Object`
 
 Override rules in the [default config](https://github.com/jorgegonzalez/korra/blob/master/src/eslintrc.json). See the [ESLint docs](http://eslint.org/docs/rules/) for more info on each rule. See
 
-### `envs`
+#### `envs`
 
 Type: `Array`
 
@@ -59,7 +59,7 @@ Default: `['node', 'browser']`
 
 An environment defines global variables that are predefined. See [Specifying Environments](http://eslint.org/docs/user-guide/configuring#specifying-environments).
 
-### `globals`
+#### `globals`
 
 Type: `Array`
 
