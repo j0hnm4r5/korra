@@ -71,7 +71,7 @@ Korra reads options set in your `package.json`:
       "unicorn/filename-case": "off",
       "import/newline-after-import": "off"
     },
-    "env": ["jest"],
+    "envs": ["jest"],
     "globals": ["graphql"]
   }
 }
