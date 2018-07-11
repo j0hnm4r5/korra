@@ -57,18 +57,38 @@ export default class Engine {
 
     configurableKeys.forEach(key => {
       if (key in packageOptions) {
-        if (key === 'rules') {
-          options.eslintConfig.rules = {
-            ...packageOptions.rules,
-            ...this.eslintConfig.rules
-          };
-        } else if (key === 'parser') {
-          options.eslintConfig.parser = packageOptions.parser;
-        } else {
-          // The other options map to arrays
-          options.eslintConfig[key] = this.eslintConfig[key].concat(
-            packageOptions[key]
-          );
+        switch (key) {
+          case 'rules':
+            options.eslintConfig.rules = {
+              ...packageOptions.rules,
+              ...this.eslintConfig.rules
+            };
+            break;
+
+          case 'parser':
+            options.eslintConfig.parser = packageOptions.parser;
+            break;
+
+          case 'globals':
+            options.eslintConfig.globals = this.eslintConfig.globals.concat(
+              packageOptions.globals
+            );
+            break;
+
+          case 'plugins':
+            options.eslintConfig.plugins = this.eslintConfig.plugins.concat(
+              packageOptions.plugins
+            );
+            break;
+
+          case 'envs':
+            options.eslintConfig.envs = this.eslintConfig.envs.concat(
+              packageOptions.envs
+            );
+            break;
+
+          default:
+            throw new Error('Unexpected key in "configurableKeys"');
         }
       }
     });
