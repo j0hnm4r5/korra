@@ -34,13 +34,24 @@ export default () => {
   }
 
   let report = korra.lint(input, flags.fix);
+  let formatter = korra.CLIEngine.getFormatter('pretty');
   let {
     errorCount,
     warningCount,
     fixableErrorCount,
     fixableWarningCount
   } = report;
-  let formatter = korra.CLIEngine.getFormatter('pretty');
+
+  if (flags.fix) {
+    korra.outputFixes(report);
+  } else if (fixableErrorCount > 0 || fixableWarningCount > 0) {
+    let total = fixableErrorCount + fixableWarningCount;
+    console.log(
+      `Found ${total} fixable ${
+        total > 1 ? 'issues' : 'issue'
+      } => Run ${chalk.bold.cyan('korra --fix')}`
+    );
+  }
 
   if (
     errorCount === 0 &&
@@ -52,16 +63,5 @@ export default () => {
     return;
   }
 
-  if (flags.fix) {
-    korra.outputFixes(report);
-  } else if (fixableErrorCount > 0 || fixableWarningCount > 0) {
-    let total = fixableErrorCount + fixableWarningCount
-    console.log(
-      `Found ${total} fixable ${
-        total > 1 ? 'issues' : 'issue'
-      } => Run ${chalk.bold.cyan('korra --fix')}`
-    );
-  }
-
-  console.log(formatter(report.results))
+  console.log(formatter(report.results));
 };
