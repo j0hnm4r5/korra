@@ -11,7 +11,7 @@ export default class Engine {
     let defaults = {
       version: pkg.version,
       eslintConfig: {
-        configFile: path.join(__dirname, 'eslintrc.json')
+        configFile: path.join(__dirname, '../eslintrc.json')
       }
     };
 
