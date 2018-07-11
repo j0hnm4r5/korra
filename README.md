@@ -161,6 +161,24 @@ Then, add the following to your `package.json`:
 
 I am working on adding TypeScript support with no extra steps.
 
+## Editor Integration
+
+Korra does not have a dedicated editor plugin (yet!). What you can do for now is point your editor's native ESLint plugin to your local Korra `eslint` config:
+
+1. Install Korra locally (`yarn add --dev korra` or `npm install --save-dev korra`)
+
+1. Install your editor's native ESLint plugin (for Visual Studio Code that's [vscode-eslint](https://github.com/Microsoft/vscode-eslint))
+
+1. In your editor's settings, point your ESLint plugin to Korra's local config file: `node_modules/korra/src/eslintrc.json`
+
+    * In Visual Studio Code you would set this in `eslint.options#configFile`:
+
+    ```json
+    "eslint.options": {
+      "configFile": "node_modules/korra/src/eslintrc.json"
+    }
+    ```
+
 ## Included Dependencies, Configs, and Plugins
 
 Korra is not a light package, and will include all of the following dependecies (and then some) when it is installed:
