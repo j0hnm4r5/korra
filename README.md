@@ -17,13 +17,47 @@
 
 ## Installation and Usage
 
+Install Korra globally with Yarn or npm:
+
 ```sh
 yarn global add korra
+```
+
+or with npm:
+
+```sh
+npm install --global korra
 ```
 
 Run `korra` in a project to output errors:
 
 <img src="https://i.imgur.com/4u4nVzk.png" alt="korra">
+
+You may also want to install Korra locally as a `devDependency`:
+
+```sh
+yarn add --dev korra
+```
+
+or with npm:
+
+```sh
+npm install --save-dev korra
+```
+
+Then add Korra on your project by adding it to `package.json#scripts`:
+
+```json
+{
+  "name": "my-app",
+  "scripts": {
+    "lint": "korra",
+    "format": "korra --fix"
+  }
+}
+```
+
+Running `yarn lint` or `npm run lint` will print errors, and running `yarn format` or `npm run format` will fix all auto-fixable errors.
 
 ## Configuration
 
