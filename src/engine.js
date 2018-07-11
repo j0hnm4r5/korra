@@ -8,19 +8,12 @@ import pkg from '../package';
 
 export default class Engine {
   constructor() {
-    let defaults = {
-      version: pkg.version,
-      eslintConfig: {
-        configFile: path.join(__dirname, '../eslintrc.json')
-      }
-    };
-
     let cacheLocation = path.join(
       os.homedir() || os.tmpdir(),
-      `.korra-v${defaults.version}-cache/`
+      `.korra-v${pkg.version}-cache/`
     );
 
-    this.eslintConfig = {
+    this.defaultOptions = {
       cache: true,
       cacheLocation,
       envs: [],
@@ -30,26 +23,16 @@ export default class Engine {
       plugins: [],
       useEslintrc: false,
       rules: {},
-      ...defaults.eslintConfig
+      configFile: path.join(__dirname, '../eslintrc.json')
     };
 
     this.options = this.parseoptions();
-    this.CLIEngine = new CLIEngine(this.options.eslintConfig);
     this.outputFixes = CLIEngine.outputFixes;
   }
 
   parseoptions() {
     let options = {
-      eslintConfig: { ...this.eslintConfig },
-      cwd: process.cwd(),
-      ignore: [
-        '**/*.min.js',
-        '**/bundle.js',
-        'coverage/**',
-        'node_modules/**',
-        'vendor/**',
-        'dist/**'
-      ]
+      ...this.defaultOptions
     };
 
     let packageOptions = pkgConf.sync('korra');
@@ -59,32 +42,30 @@ export default class Engine {
       if (key in packageOptions) {
         switch (key) {
           case 'rules':
-            options.eslintConfig.rules = {
+            options.rules = {
               ...packageOptions.rules,
-              ...this.eslintConfig.rules
+              ...this.defaultOptions.rules
             };
             break;
 
           case 'parser':
-            options.eslintConfig.parser = packageOptions.parser;
+            options.parser = packageOptions.parser;
             break;
 
           case 'globals':
-            options.eslintConfig.globals = this.eslintConfig.globals.concat(
+            options.globals = this.defaultOptions.globals.concat(
               packageOptions.globals
             );
             break;
 
           case 'plugins':
-            options.eslintConfig.plugins = this.eslintConfig.plugins.concat(
+            options.plugins = this.defaultOptions.plugins.concat(
               packageOptions.plugins
             );
             break;
 
           case 'envs':
-            options.eslintConfig.envs = this.eslintConfig.envs.concat(
-              packageOptions.envs
-            );
+            options.envs = this.defaultOptions.envs.concat(packageOptions.envs);
             break;
 
           default:
@@ -98,7 +79,14 @@ export default class Engine {
 
   lint(files, fix) {
     let globbyOptions = {
-      ignore: this.options.ignore,
+      ignore: [
+        '**/*.min.js',
+        '**/bundle.js',
+        'coverage/**',
+        'node_modules/**',
+        'vendor/**',
+        'dist/**'
+      ],
       gitignore: true
     };
 
@@ -106,8 +94,10 @@ export default class Engine {
     let result;
 
     if (fix) {
-      this.CLIEngine.options.fix = true;
+      this.options.fix = true;
     }
+
+    this.CLIEngine = new CLIEngine(this.options);
 
     try {
       result = this.CLIEngine.executeOnFiles(paths);
