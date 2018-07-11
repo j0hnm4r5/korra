@@ -8,6 +8,7 @@
     "airbnb",
     "plugin:promise/recommended",
     "plugin:unicorn/recommended",
+    "plugin:flowtype/recommended",
     "plugin:prettier/recommended",
     "prettier/react",
     "prettier/flowtype"
