@@ -1,7 +1,7 @@
 {
   "name": "korra",
   "version": "0.1.1",
-  "description": "✨ JavaScript linter and formatter.",
+  "description": "✨ Zero-config JavaScript linter and formatter.",
   "author": "Jorge Gonzalez",
   "license": "MIT",
   "homepage": "https://github.com/jorgegonzalez/korra",

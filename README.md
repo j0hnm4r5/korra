@@ -1,6 +1,6 @@
 # Korra
 
-> ✨ JavaScript linter and formatter.
+> ✨ Zero-config JavaScript linter and formatter.
 
 [![License MIT](https://img.shields.io/badge/license-MIT-red.svg)](/LICENSE)
 [![Prettier](https://img.shields.io/badge/style-prettier-ff69b4.svg)](https://prettier.io/)
