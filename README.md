@@ -17,13 +17,13 @@
 
 ## Installation and Usage
 
-Install Korra globally with Yarn or npm:
+Install Korra globally with `yarn`:
 
 ```sh
 yarn global add korra
 ```
 
-or with npm:
+or with `npm`:
 
 ```sh
 npm install --global korra
@@ -39,7 +39,7 @@ You may also want to install Korra locally as a `devDependency`:
 yarn add --dev korra
 ```
 
-or with npm:
+or:
 
 ```sh
 npm install --save-dev korra
