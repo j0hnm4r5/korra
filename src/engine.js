@@ -1,6 +1,6 @@
 import path from 'path';
 import os from 'os';
-import eslint from 'eslint';
+import { CLIEngine } from 'eslint';
 import pkgConf from 'pkg-conf';
 import globby from 'globby';
 
@@ -34,8 +34,8 @@ export default class Engine {
     };
 
     this.options = this.parseoptions();
-    this.CLIEngine = new eslint.CLIEngine(this.options.eslintConfig);
-    this.outputFixes = eslint.CLIEngine.outputFixes;
+    this.CLIEngine = new CLIEngine(this.options.eslintConfig);
+    this.outputFixes = CLIEngine.outputFixes;
   }
 
   parseoptions() {
