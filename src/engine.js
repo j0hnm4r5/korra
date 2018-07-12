@@ -113,12 +113,6 @@ export default class Engine {
     }
 
     this.CLIEngine = new CLIEngine(this.options);
-    let config = JSON.stringify(this.CLIEngine.getConfigForFile('./src'));
-
-    fs.writeFile('dist/.eslintrc.json', config, err => {
-      if (err) throw err;
-      console.log('File successfully written to disk');
-    });
 
     try {
       result = this.CLIEngine.executeOnFiles(paths);
