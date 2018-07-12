@@ -3,17 +3,18 @@
 > ✨ Zero-config JavaScript linter and formatter.
 
 [![License MIT](https://img.shields.io/badge/license-MIT-red.svg)](/LICENSE)
-[![Prettier](https://img.shields.io/badge/style-prettier-ff69b4.svg)](https://prettier.io/)
-[![Zoe](https://img.shields.io/badge/linter-korra-5F5FFF.svg)](https://github.com/jorgegonzalez/korra)
+[![Prettier](https://img.shields.io/badge/style-Prettier-ff69b4.svg)](https://prettier.io/)
+[![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
+[![Zoe](https://img.shields.io/badge/linter-Korra-5F5FFF.svg)](https://github.com/jorgegonzalez/korra)
 
 ## Features
 
 - **No configuration**. Just install Korra and you're ready to go.
 - **Prettier** and **eslint-config-airbnb**.
-- Out of the box support for **React**, **Flow**, and **Jest**.
+- Out-of-the-box support for **React**, **Flow**, and **Jest**.
 - Fix issues by running `korra --fix`.
 - 100% extensible. If you don't like a rule, you can easily change it.
-- _(coming soon: out of the box support for TypeScript)_
+- _(coming soon: out-of-the-box support for TypeScript)_
 
 ## Installation and Usage
 
@@ -190,6 +191,7 @@ Korra is not a light package, and will include all of the following dependecies 
 * `eslint-formatter-pretty`
 * `eslint-plugin-flowtype`
 * `eslint-plugin-import`
+* `eslint-plugin-jest`
 * `eslint-plugin-jsx-a11y`
 * `eslint-plugin-no-use-extend-native`
 * `eslint-plugin-prettier`
