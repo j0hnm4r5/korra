@@ -1,6 +1,6 @@
 {
   "name": "korra",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "✨ Zero-config JavaScript linter and formatter.",
   "author": "Jorge Gonzalez",
   "license": "MIT",
