@@ -1,6 +1,5 @@
 import path from 'path';
 import os from 'os';
-import fs from 'fs';
 import { CLIEngine } from 'eslint';
 import pkgConf from 'pkg-conf';
 import globby from 'globby';
@@ -8,14 +7,17 @@ import globby from 'globby';
 import pkg from '../package';
 
 export default class Engine {
-  constructor() {
+  constructor(cwd = process.cwd()) {
     let cacheLocation = path.join(
       os.homedir() || os.tmpdir(),
       `.korra-v${pkg.version}-cache/`
     );
 
+    let configFile = path.join(__dirname, '../eslintrc.json');
+
     this.defaultOptions = {
       cache: true,
+      cwd,
       cacheLocation,
       envs: [],
       fix: false,
@@ -25,7 +27,7 @@ export default class Engine {
       useEslintrc: false,
       rules: {},
       extends: [],
-      configFile: path.join(__dirname, '../eslintrc.json')
+      configFile
     };
 
     this.options = this.parseoptions();
@@ -37,7 +39,7 @@ export default class Engine {
       ...this.defaultOptions
     };
 
-    let packageOptions = pkgConf.sync('korra');
+    let packageOptions = pkgConf.sync('korra', { cwd: options.cwd });
     let configurableKeys = [
       'rules',
       'globals',

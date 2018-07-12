@@ -3016,9 +3016,9 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-korra@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/korra/-/korra-0.1.2.tgz#13539b57213aa468fa6c8a32484b56284f05dd22"
+korra@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/korra/-/korra-0.1.4.tgz#83ee3126a2deea56891ab34d5d19268a629ae540"
   dependencies:
     babel-eslint "^8.2.5"
     chalk "^2.4.1"
@@ -3028,6 +3028,7 @@ korra@^0.1.2:
     eslint-formatter-pretty "^1.3.0"
     eslint-plugin-flowtype "^2.50.0"
     eslint-plugin-import "^2.12.0"
+    eslint-plugin-jest "^21.17.0"
     eslint-plugin-jsx-a11y "^6.0.3"
     eslint-plugin-no-use-extend-native "^0.3.12"
     eslint-plugin-prettier "^2.6.1"

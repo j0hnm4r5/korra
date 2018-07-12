@@ -1,0 +1,6 @@
+{
+  "name": "awesome-package",
+  "korra": {
+    "parser": "typescript-eslint-parser"
+  }
+}
