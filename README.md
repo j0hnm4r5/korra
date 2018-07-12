@@ -10,7 +10,7 @@
 
 - **No configuration**. Just install Korra and you're ready to go.
 - **Prettier** and **eslint-config-airbnb**.
-- Out of the box support for **React** and **Flow**.
+- Out of the box support for **React**, **Flow**, and **Jest**.
 - Fix issues by running `korra --fix`.
 - 100% extensible. If you don't like a rule, you can easily change it.
 - _(coming soon: out of the box support for TypeScript)_
@@ -71,7 +71,7 @@ Korra reads options set in your `package.json`:
       "unicorn/filename-case": "off",
       "import/newline-after-import": "off"
     },
-    "envs": ["jest"],
+    "envs": ["ava"],
     "globals": ["graphql"]
   }
 }
