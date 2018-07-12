@@ -10,7 +10,7 @@ updateNotifier({ pkg }).notify();
 let { input, flags } = meow(
   chalk`
 Usage:
-  $ korra <option> [args]
+$ korra <option> [args]
 `,
   {
     flags: {
@@ -24,16 +24,7 @@ Usage:
   }
 );
 
-export default () => {
-  console.log(chalk.bold.cyan('Korra'), pkg.version);
-
-  let korra = new Engine();
-
-  if (input.length === 0) {
-    input = ['**/*.js', '**/*.jsx'];
-  }
-
-  let report = korra.lint(input, flags.fix);
+function logger(korra, report) {
   let formatter = korra.CLIEngine.getFormatter('pretty');
   let {
     errorCount,
@@ -64,4 +55,17 @@ export default () => {
   }
 
   console.log(formatter(report.results));
+}
+
+export default () => {
+  console.log(chalk.bold.cyan('Korra'), pkg.version);
+
+  let korra = new Engine();
+
+  if (input.length === 0) {
+    input = ['**/*.js', '**/*.jsx'];
+  }
+
+  let report = korra.lint(input, flags.fix);
+  logger(korra, report);
 };
