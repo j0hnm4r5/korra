@@ -4,7 +4,7 @@
 
 [![License MIT](https://img.shields.io/badge/license-MIT-red.svg)](/LICENSE)
 [![Prettier](https://img.shields.io/badge/style-prettier-ff69b4.svg)](https://prettier.io/)
-[![Zoe](https://img.shields.io/badge/linter-korra-5F5FFF.svg)](https://github.com/jorgegonzalez/zoe)
+[![Zoe](https://img.shields.io/badge/linter-korra-5F5FFF.svg)](https://github.com/jorgegonzalez/korra)
 
 ## Features
 
