@@ -1,5 +1,6 @@
 import path from 'path';
 import os from 'os';
+import fs from 'fs';
 import { CLIEngine } from 'eslint';
 import pkgConf from 'pkg-conf';
 import globby from 'globby';
@@ -23,6 +24,7 @@ export default class Engine {
       plugins: [],
       useEslintrc: false,
       rules: {},
+      extends: [],
       configFile: path.join(__dirname, '../eslintrc.json')
     };
 
@@ -36,7 +38,14 @@ export default class Engine {
     };
 
     let packageOptions = pkgConf.sync('korra');
-    let configurableKeys = ['rules', 'globals', 'plugins', 'envs', 'parser'];
+    let configurableKeys = [
+      'rules',
+      'globals',
+      'plugins',
+      'envs',
+      'parser',
+      'extends'
+    ];
 
     configurableKeys.forEach(key => {
       if (key in packageOptions) {
@@ -66,6 +75,12 @@ export default class Engine {
 
           case 'envs':
             options.envs = this.defaultOptions.envs.concat(packageOptions.envs);
+            break;
+
+          case 'extends':
+            options.extends = this.defaultOptions.extends.concat(
+              packageOptions.extends
+            );
             break;
 
           default:
@@ -98,6 +113,12 @@ export default class Engine {
     }
 
     this.CLIEngine = new CLIEngine(this.options);
+    let config = JSON.stringify(this.CLIEngine.getConfigForFile('./src'));
+
+    fs.writeFile('dist/.eslintrc.json', config, err => {
+      if (err) throw err;
+      console.log('File successfully written to disk');
+    });
 
     try {
       result = this.CLIEngine.executeOnFiles(paths);
