@@ -1,4 +1,4 @@
-# Korra
+<img src="media/Logo.png" alt="Korra Logo" />
 
 > ✨ Zero-config JavaScript linter and formatter.
 
