@@ -67,6 +67,9 @@
     "korra": "^0.1.4",
     "regenerator-runtime": "^0.12.0"
   },
+  "resolutions": {
+    "eslint-scope": "3.7.1"
+  },
   "scripts": {
     "test": "korra && jest"
   },
