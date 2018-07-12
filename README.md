@@ -2,7 +2,7 @@
   <img src="media/Logo.png" alt="Korra Logo" width="500px" />
 </p>
 
-> ✨ Zero-config JavaScript linter and formatter.
+> 🐾 Zero-config JavaScript linter and formatter.
 
 [![License MIT](https://img.shields.io/badge/license-MIT-red.svg)](/LICENSE)
 [![Prettier](https://img.shields.io/badge/style-Prettier-ff69b4.svg)](https://prettier.io/)
