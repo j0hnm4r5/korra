@@ -100,7 +100,8 @@ export default class Engine {
         'coverage/**',
         'node_modules/**',
         'vendor/**',
-        'dist/**'
+        'dist/**',
+        'flow-typed/**'
       ],
       gitignore: true
     };
