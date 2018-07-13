@@ -12,7 +12,7 @@
 ## Features
 
 - **No configuration necessary**. Just install Korra and you're ready to go.
-- Defaults to **[Prettier](https://github.com/prettier/prettier)** for formatting rules and **[eslint-config-airbnb](https://github.com/airbnb/javascript/)** for code-quality rules (with a few rules turned off). Check out the [config]('/eslintrc.json').
+- Defaults to **[Prettier](https://github.com/prettier/prettier)** for formatting rules and **[eslint-config-airbnb](https://github.com/airbnb/javascript/)** for code-quality rules (with a few rules turned off). Check out the [config](/eslintrc.json).
 - Out-of-the-box support for **React**, **Flow**, and **Jest**. No need to manually install any additional plugins or configs.
 - Fix issues by running `korra --fix`.
 - Completely configurable and extensible. If you don't like a rule, you can easily change it.
