@@ -49,7 +49,7 @@ or:
 npm install --save-dev korra
 ```
 
-Then add Korra on your project by adding it to `package.json#scripts`:
+Run Korra by adding it to `package.json#scripts`:
 
 ```json
 {
