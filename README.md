@@ -11,11 +11,12 @@
 
 ## Features
 
-- **No configuration**. Just install Korra and you're ready to go.
-- **Prettier** and **eslint-config-airbnb**.
-- Out-of-the-box support for **React**, **Flow**, and **Jest**.
+- **No configuration necessary**. Just install Korra and you're ready to go.
+- Defaults to **[Prettier](https://github.com/prettier/prettier)** for formatting rules and **[eslint-config-airbnb](https://github.com/airbnb/javascript/)** for code-quality rules (with a few rules turned off). Check out the [config]('/eslintrc.json').
+- Out-of-the-box support for **React**, **Flow**, and **Jest**. No need to manually install any additional plugins or configs.
 - Fix issues by running `korra --fix`.
-- 100% extensible. If you don't like a rule, you can easily change it.
+- Completely configurable and extensible. If you don't like a rule, you can easily change it.
+- Includes [eslint-plugin-promise](https://github.com/xjamundx/eslint-plugin-promise) and [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn) for some additional goodies.
 - _(coming soon: out-of-the-box support for TypeScript)_
 
 ## Installation and Usage
@@ -168,13 +169,13 @@ I am working on adding TypeScript support with no extra steps.
 
 Korra does not have a dedicated editor plugin (yet!). What you can do for now is point your editor's native ESLint plugin to your local Korra `eslint` config:
 
-1. Install Korra locally (`yarn add --dev korra` or `npm install --save-dev korra`)
+1.  Install Korra locally (`yarn add --dev korra` or `npm install --save-dev korra`)
 
-1. Install your editor's native ESLint plugin (for Visual Studio Code that's [vscode-eslint](https://github.com/Microsoft/vscode-eslint))
+1.  Install your editor's native ESLint plugin (for Visual Studio Code that's [vscode-eslint](https://github.com/Microsoft/vscode-eslint))
 
-1. In your editor's settings, point your ESLint plugin to Korra's local config file: `node_modules/korra/src/eslintrc.json`
+1.  In your editor's settings, point your ESLint plugin to Korra's local config file: `node_modules/korra/src/eslintrc.json`
 
-    * In Visual Studio Code you would set this in `eslint.options#configFile`:
+    - In Visual Studio Code you would set this in `eslint.options#configFile`:
 
     ```json
     "eslint.options": {
@@ -186,21 +187,21 @@ Korra does not have a dedicated editor plugin (yet!). What you can do for now is
 
 Korra is not a light package, and will include all of the following dependecies (and then some) when it is installed:
 
-* `babel-eslint`
-* `eslint`
-* `eslint-config-airbnb`
-* `eslint-config-prettier`
-* `eslint-formatter-pretty`
-* `eslint-plugin-flowtype`
-* `eslint-plugin-import`
-* `eslint-plugin-jest`
-* `eslint-plugin-jsx-a11y`
-* `eslint-plugin-no-use-extend-native`
-* `eslint-plugin-prettier`
-* `eslint-plugin-promise`
-* `eslint-plugin-react`
-* `eslint-plugin-unicorn`
-* `prettier`
+- `babel-eslint`
+- `eslint`
+- `eslint-config-airbnb`
+- `eslint-config-prettier`
+- `eslint-formatter-pretty`
+- `eslint-plugin-flowtype`
+- `eslint-plugin-import`
+- `eslint-plugin-jest`
+- `eslint-plugin-jsx-a11y`
+- `eslint-plugin-no-use-extend-native`
+- `eslint-plugin-prettier`
+- `eslint-plugin-promise`
+- `eslint-plugin-react`
+- `eslint-plugin-unicorn`
+- `prettier`
 
 This is necessary so that Korra can be truly zero-config. Including these dependencies instead of forcing a user to manually install them helps with that goal.
 
