@@ -3,7 +3,7 @@ import meow from 'meow';
 import chalk from 'chalk';
 
 import pkg from '../package';
-import Engine from './engine';
+import korra from './engine';
 
 updateNotifier({ pkg }).notify();
 
@@ -24,8 +24,7 @@ $ korra <option> [args]
   }
 );
 
-function logger(korra, report) {
-  let formatter = korra.CLIEngine.getFormatter('pretty');
+function logger(report, formatter) {
   let {
     errorCount,
     warningCount,
@@ -60,12 +59,10 @@ function logger(korra, report) {
 export default () => {
   console.log(chalk.bold.cyan('Korra'), pkg.version);
 
-  let korra = new Engine();
-
   if (input.length === 0) {
     input = ['**/*.js', '**/*.jsx'];
   }
 
-  let report = korra.lint(input, flags.fix);
-  logger(korra, report);
+  let { report, formatter } = korra.lint(input, flags.fix);
+  logger(report, formatter);
 };
