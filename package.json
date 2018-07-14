@@ -74,7 +74,8 @@
     "eslint-scope": "3.7.1"
   },
   "scripts": {
-    "test": "korra && jest"
+    "test": "korra && jest",
+    "jest": "jest"
   },
   "jest": {
     "testMatch": [

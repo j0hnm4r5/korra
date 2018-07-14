@@ -1,6 +1,8 @@
 {
   "name": "awesome-package",
   "korra": {
-    "envs": ["mongo", "jquery"]
+    "rules": {
+      "prefer-const": "error"
+    }
   }
 }

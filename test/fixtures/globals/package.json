@@ -1,6 +1,6 @@
 {
   "name": "awesome-package",
   "korra": {
-    "envs": ["mongo", "jquery"]
+    "globals": ["graphql"]
   }
 }
