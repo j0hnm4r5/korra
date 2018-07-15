@@ -109,7 +109,7 @@ globals:
 
 You can also name the file `.korrarc.json` or `.korrarc.yaml`, or export a JS object with `.korra.config.js`.
 
-Rules set in `package.json` will overrule those set in `.korrarc`, which will overrule those set in `.korrarc.json` or '.korrarc.yaml`.
+Rules set in `package.json` will overrule those set in `.korrarc`, which will overrule those set in `.korrarc.json` or `.korrarc.yaml`.
 
 You can set any of the following options:
 
