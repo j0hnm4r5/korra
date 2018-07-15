@@ -81,6 +81,36 @@ Korra reads options set in your `package.json`:
 }
 ```
 
+Or in a file named `.korrarc`:
+
+```json
+{
+  "rules": {
+    "unicorn/filename-case": "off",
+    "import/newline-after-import": "off"
+  },
+  "envs": ["ava"],
+  "globals": ["graphql"]
+}
+```
+
+or
+
+```yaml
+---
+rules:
+  unicorn/filename-case: 'off'
+  import/newline-after-import: 'off'
+envs:
+- ava
+globals:
+- graphql
+```
+
+You can also name the file `.korrarc.json` or `.korrarc.yaml`, or export a JS object with `.korra.config.js`.
+
+Rules set in `package.json` will overrule those set in `.korrarc`, which will overrule those set in `.korrarc.json` or '.korrarc.yaml`.
+
 You can set any of the following options:
 
 #### `rules`
@@ -171,9 +201,9 @@ Korra does not have a dedicated editor plugin (yet!). What you can do for now is
 
 1.  Install Korra locally (`yarn add --dev korra` or `npm install --save-dev korra`)
 
-1.  Install your editor's native ESLint plugin (for Visual Studio Code that's [vscode-eslint](https://github.com/Microsoft/vscode-eslint))
+2.  Install your editor's native ESLint plugin (for Visual Studio Code that's [vscode-eslint](https://github.com/Microsoft/vscode-eslint))
 
-2.  In your editor's settings, point your ESLint plugin to Korra's local config file: `node_modules/korra/eslintrc.json`
+3.  In your editor's settings, point your ESLint plugin to Korra's local config file: `node_modules/korra/eslintrc.json`
 
     - In Visual Studio Code you would set this in `eslint.options#configFile`:
 
@@ -182,6 +212,8 @@ Korra does not have a dedicated editor plugin (yet!). What you can do for now is
       "configFile": "node_modules/korra/eslintrc.json"
     }
     ```
+
+:warning: **Caveat** :warning:: Custom rules in your `package.json` or `.korrarc` will not work with this method. See [Issue #7](https://github.com/jorgegonzalez/korra/issues/7#issuecomment-405069251) for more details.
 
 ## Included Dependencies, Configs, and Plugins
 
