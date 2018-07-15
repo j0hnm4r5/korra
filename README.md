@@ -173,13 +173,13 @@ Korra does not have a dedicated editor plugin (yet!). What you can do for now is
 
 1.  Install your editor's native ESLint plugin (for Visual Studio Code that's [vscode-eslint](https://github.com/Microsoft/vscode-eslint))
 
-1.  In your editor's settings, point your ESLint plugin to Korra's local config file: `node_modules/korra/src/eslintrc.json`
+2.  In your editor's settings, point your ESLint plugin to Korra's local config file: `node_modules/korra/eslintrc.json`
 
     - In Visual Studio Code you would set this in `eslint.options#configFile`:
 
     ```json
     "eslint.options": {
-      "configFile": "node_modules/korra/src/eslintrc.json"
+      "configFile": "node_modules/korra/eslintrc.json"
     }
     ```
 
